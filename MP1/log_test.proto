@@ -1,0 +1,18 @@
+message ClientQuery {
+  string clientIP = 1;
+  string serverIP = 2;
+  string pattern = 3;
+  string regex = 4;
+}
+
+message ServerOneMatched {
+  string line = 1;
+  string matchedPattern = 2;
+}
+
+// Our address book file is just one of these.
+message ServerResponse {
+  string clientIP = 1;
+  string serverIP = 2;
+  repeated ServerOneMatched answers = 3;
+}
